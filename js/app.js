@@ -50,14 +50,14 @@ function takeTurn(e) {
     let index = squares.findIndex(function(square) {
       return square === e.target;
     });
-  }
 
-  if (board[index] === "") {
-    board[index] = turn;
-    turn = turn === "X" ? "O" : "X";
-    win = getWinner();
+    if (board[index] === "") {
+      board[index] = turn;
+      turn = turn === "X" ? "O" : "X";
+      win = getWinner();
 
-    render();
+      render();
+    }
   }
 }
 
