@@ -3,9 +3,11 @@
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
+let win;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
+const message = document.querySelector("h2");
 
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
@@ -27,6 +29,8 @@ function render() {
   board.forEach(function(mark, index) {
     squares[index].textContent = mark;
   });
+
+  message.textContent = `Turn: ${turn}`;
 }
 
 function takeTurn(e) {
