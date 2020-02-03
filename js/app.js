@@ -6,6 +6,7 @@ let board;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 
 ///////////////////// EVENT LISTENERS ///////////////////////////////
+window.onload = init;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
@@ -15,5 +16,9 @@ function init() {
     "", "", ""
   ];
 
-  render();   // we'll write this later
+  render();
+}
+
+function render() {
+  
 }
