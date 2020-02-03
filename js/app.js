@@ -40,7 +40,7 @@ function render() {
     squares[index].textContent = mark;
   });
 
-  message.textContent = `Turn: ${turn}`;
+  message.textContent = win ? `${win} wins!` : `Turn: ${turn}`;
 }
 
 function takeTurn(e) {
