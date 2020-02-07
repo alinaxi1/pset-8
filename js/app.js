@@ -24,7 +24,7 @@ const message = document.querySelector("h2");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
-
+document.getElementById('keepScoreX') = keepScoreX;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
   board = [
@@ -76,14 +76,13 @@ function getWinner() {
     }
   });
 
-  if (win === "X") {
+  if (winner === "X") {
     keepScoreX++;
-  } else if (win === "O") {
+    document.getElementById('ScoreX').innerHTML = keepScoreX;
+  } else if (winner === "O") {
     keepScoreO++;
+    document.getElementById('ScoreO').innerHTML = keepScoreO;
   }
-
-  document.getElementById('ScoreX').innerhtml = keepScoreX;
-  document.getElementById('ScoreO').innerhtml = keepScoreO;
 
   return winner ? winner : board.includes("") ? null : "T";
 }
