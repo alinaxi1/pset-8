@@ -24,7 +24,7 @@ const message = document.querySelector("h2");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
-document.getElementById('keepScoreX') = keepScoreX;
+
 ///////////////////// FUNCTIONS /////////////////////////////////////
 function init() {
   board = [
