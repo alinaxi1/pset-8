@@ -13,6 +13,8 @@ const winningConditions = [
 let board;
 let turn;
 let win;
+let keepScoreX = 0;
+let keepScoreO = 0;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
@@ -46,7 +48,7 @@ function render() {
 }
 
 function takeTurn(e) {
-  if(!win) {
+  if (!win) {
     let index = squares.findIndex(function(square) {
       return square === e.target;
     });
@@ -73,6 +75,15 @@ function getWinner() {
       winner = board[condition[0]];
     }
   });
+
+  if (win === "X") {
+    keepScoreX++;
+  } else if (win === "O") {
+    keepScoreO++;
+  }
+
+  document.getElementById('ScoreX').innerhtml = keepScoreX;
+  document.getElementById('ScoreO').innerhtml = keepScoreO;
 
   return winner ? winner : board.includes("") ? null : "T";
 }
